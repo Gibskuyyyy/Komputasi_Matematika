@@ -3,6 +3,7 @@ clear
 
 %buat conntoh nested if,dan contoh while
 %nested if tentang kasir
+disp ('NESTED IF');
 disp ('RUMAH MAKAN PADANG GIBRAN');
 disp ('=========================');
 
@@ -35,13 +36,11 @@ else
     disp('Baiklah, senang atas kunjungan Anda.');
 end
 
-        
-clc
-clear
 %while tentang kasir
 ulang = true;
 
 while ulang
+    disp ('while loop');
     disp ('RUMAH MAKAN PADANG GIBRAN');
     disp ('=========================');
 
