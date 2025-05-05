@@ -5,10 +5,10 @@ f = inline('x^2 - 3', 'x');
 X = [1 2];
 
 % Panggil fungsi BagiDua
-[x, galat] = Praktikum4KompMathMetodeBagiDua(f, X);
+%[x, galat] = Praktikum4KompMathMetodeBagiDua(f, X);
 
 %panggil fungsi PosisiPalsu
-%[x, galat] = PosisiPalsu(f, X);
+[x, galat] = Praktikum5KompMathPosisiPalsu(f, X);
 
 % Tampilkan hasil
 % fprintf('Akar hampiran: %.6f\n', x);
