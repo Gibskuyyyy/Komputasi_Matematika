@@ -1,4 +1,4 @@
-function [x, galat] = PosisiPalsu(f, X, N, tol)
+function [x, galat] = Praktikum5KompMathPosisiPalsu(f, X, N, tol)
 
 if nargin < 4, tol = 1e-3; end
 if nargin < 3, N = 100; end
