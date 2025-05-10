@@ -3,7 +3,6 @@ clear
 
 %buat conntoh nested if,dan contoh while
 %nested if tentang kasir
-disp ('NESTED IF');
 disp ('RUMAH MAKAN PADANG GIBRAN');
 disp ('=========================');
 
@@ -22,7 +21,7 @@ if lower(P1) == 'y'
             disp('Saya ulangi lagi ya pesanannya..');
             disp(['Makannya  : ', Makan]);
         end
-    else
+    elseif lower(P2) == 'n'
         P3 = input('Apakah ingin pesan minuman? (y/n): ', 's');
         if lower(P3) == 'y'
             Minum = input('Ingin pesan minum apa? ', 's');
@@ -31,16 +30,18 @@ if lower(P1) == 'y'
         else
             disp('Tidak ada pesanan.');
         end
+    else
+        disp('Tidak ada pesanan.');
     end
 else
     disp('Baiklah, senang atas kunjungan Anda.');
 end
 
+clear
 %while tentang kasir
 ulang = true;
 
 while ulang
-    disp ('while loop');
     disp ('RUMAH MAKAN PADANG GIBRAN');
     disp ('=========================');
 
