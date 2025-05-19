@@ -1,4 +1,3 @@
-% Skrip MATLAB dengan plot unik dan menarik (Kompatibel dengan MATLAB 2013)
 close all; clc;
 
 % plot – Gelombang Sinus Modifikasi
@@ -150,3 +149,136 @@ title('feather – Vektor Acak 2D'); drawnow;
 u = -y; v = x;
 figure; quiver(x, y, u, v);
 title('quiver – Medan Vektor Rotasi'); drawnow;
+
+% 1. Spiral 3D Artistik
+figure;
+t = linspace(0, 8*pi, 1000);
+x = sin(t).*(exp(0.1*t));
+y = cos(t).*(exp(0.1*t));
+z = t;
+plot3(x, y, z, 'LineWidth', 2);
+title('Spiral 3D Artistik'); grid on; axis equal; drawnow;
+
+% 2. Gambar Sayap Burung - Simulasi Simetris
+figure;
+t = linspace(0, pi, 100);
+x = [cos(t), -cos(t)];
+y = [sin(t).*cos(4*t), sin(t).*cos(4*t)];
+fill(x, y, [0.3 0.6 0.9]);
+title('Sayap Burung Simetris'); axis equal; drawnow;
+
+% 3. Permukaan Harimau Abstrak (Ilusi Gelombang)
+figure;
+[x, y] = meshgrid(-3:0.05:3, -3:0.05:3);
+z = sin(3*(x.^2 + y.^2)) .* cos(3*sqrt(x.^2 + y.^2));
+surf(x, y, z, 'EdgeColor', 'none');
+colormap(jet); title('Gelombang Harimau Abstrak'); drawnow;
+
+% 5. Poligon Kepala Naga
+figure;
+angles = linspace(0, 2*pi, 7);
+r = 1 + 0.3*sin(5*angles);
+x = r .* cos(angles);
+y = r .* sin(angles);
+fill(x, y, [1 0.4 0]);
+title('Poligon Kepala Naga'); axis equal; drawnow;
+
+% 6. Plot Kupu-Kupu (Butterfly Curve)
+figure;
+t = linspace(0, 12*pi, 10000);
+x = sin(t) .* (exp(cos(t)) - 2*cos(4*t) - sin(t/12).^5);
+y = cos(t) .* (exp(cos(t)) - 2*cos(4*t) - sin(t/12).^5);
+plot(x, y, 'm'); axis equal; title('Butterfly Curve'); drawnow;
+
+% 7. Blogspot (Polkadot Blog Style)
+figure;
+[x, y] = meshgrid(-5:0.5:5, -5:0.5:5);
+z = sin(x.^2 + y.^2);
+scatter(x(:), y(:), 100, z(:), 'filled');
+title('Blogspot Style – Polkadot Plot'); axis equal; drawnow;
+
+% 8. Daun Spiral Fraktal (2D)
+figure;
+t = linspace(0, 10*pi, 3000);
+r = exp(0.05*t);
+x = r .* cos(t);
+y = r .* sin(t);
+plot(x, y, 'g'); axis equal; title('Daun Spiral Fraktal'); drawnow;
+
+% 9. Matahari Terbit
+figure;
+x = linspace(-3, 3, 1000);
+y = sqrt(9 - x.^2);
+fill([-3 x 3], [0 y 0], [1 0.5 0]);
+hold on; fill([-3 3 3 -3], [0 0 -1 -1], [0.2 0.4 1]);
+title('Matahari Terbit'); axis equal; drawnow;
+
+% 10. Spiral Mawar 3D
+figure;
+t = linspace(0, 8*pi, 2000);
+r = cos(5*t);
+x = r .* cos(t);
+y = r .* sin(t);
+z = t/10;
+plot3(x, y, z, 'r'); title('Spiral Mawar 3D'); axis equal; drawnow;
+
+% 11. Bunga Polar
+figure;
+theta = linspace(0, 2*pi, 1000);
+r = sin(7*theta);
+polar(theta, r);
+title('Bunga Polar'); drawnow;
+
+% 12. Tangga Naik Pola Aneh
+figure;
+x = 0:0.1:10;
+y = sawtooth(2*pi*0.5*x);
+stairs(x, y);
+title('Tangga Naik Aneh'); drawnow;
+
+% 13. Fill Bulat Warna-warni
+figure;
+theta = linspace(0, 2*pi, 100);
+colors = jet(5);
+for k = 1:5
+    r = k*0.5;
+    x = r*cos(theta);
+    y = r*sin(theta);
+    fill(x, y, colors(k,:));
+    hold on;
+end
+title('Fill Bulat Warna-warni'); axis equal; drawnow;
+
+% 14. Permukaan Vulkanik Eksotis
+figure;
+[x, y] = meshgrid(-4:0.1:4, -4:0.1:4);
+z = exp(-x.^2 - y.^2) .* cos(10*(x.^2 + y.^2));
+surf(x, y, z, 'EdgeColor', 'none');
+colormap(hot); title('Permukaan Vulkanik Eksotis'); drawnow;
+
+% 15. Wave Interference
+figure;
+[x, y] = meshgrid(-5:0.1:5, -5:0.1:5);
+z = sin(x).*cos(y) + sin(2*x).*cos(2*y);
+contourf(x, y, z, 50); colormap(jet); colorbar;
+title('Gelombang Interferensi'); drawnow;
+
+% 16. Kurva Bentuk Lumba-Lumba (Abstrak)
+figure;
+t = linspace(0, 4*pi, 1000);
+x = t .* sin(t);
+y = t .* cos(t);
+plot(x, y); title('Lumba-Lumba Abstrak'); drawnow;
+
+% Kabut Gaussian
+figure;
+x = linspace(-5,5,100);
+y = exp(-x.^2);
+area(x,y,'FaceColor',[0.6 0.7 0.8]);
+title('Kabut Gaussian'); drawnow;
+
+% Grid Alien Matrix
+figure;
+data = rand(20);
+imagesc(data); colormap(gray);
+title('Alien Grid – Matrix Map'); colorbar; drawnow;
